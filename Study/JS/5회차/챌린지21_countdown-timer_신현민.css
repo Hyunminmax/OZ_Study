@@ -1,0 +1,35 @@
+/*  카운트다운 타이머 필요사항
+    1. 목표까지 남은 시간표시
+    2. 구글 글꼴
+    3. #알람타이머? 1시간으로 세팅하면 목표시간 1시간 전부터 타이머 자동으로 시작
+    4. #희망 시간 입력창
+    */
+body, html{
+    background-color: darkolivegreen;
+    text-align: center;
+}
+body{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+#title{
+    font-size: 50px;
+}
+
+span{
+    font-size: 40px;
+    font-weight: 900;
+}
+.footer{
+    position: fixed ; 
+    justify-self: center;
+    bottom: 3%;
+    left: 10%;
+    right: 10%;
+    
+    text-align: center;
+    margin: 0;
+    padding: 0;
+}

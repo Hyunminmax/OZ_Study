@@ -1,0 +1,65 @@
+<!--카운트다운 타이머 필요사항
+  1. 목표까지 남은 시간표시
+  2. #희망 시간 입력창
+  3. 
+  4. 
+-->
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+      <meta charset="UTF-8" />
+      <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+      <link rel="icon" href="../../Images/oz_icon.png" />
+      <link rel="stylesheet" href="./countdown-timer_신현민.css">
+      <title>오즈코딩스쿨 | 카운트다운 타이머</title>
+      <style>
+        .footer {
+          font-size: 12px;
+          text-align: center;
+        }
+        .footer a {
+          color: hsl(282, 100%, 21%);
+          text-decoration: none;
+        }
+      </style>
+    </head>
+    <body>
+      <header class="header">
+        <div class="container1">
+          <h1 id="title">내 결혼식까지 남은<br>시간</h1>
+        </div>
+      </header>
+      <main class="main">
+        <div class="container2">
+          <div class="timeZone" id="timeZoneDiv">
+              <span id="days">일</span>
+              <span id="hours">시</span>
+              <span id="min">분</span>
+              <span id="sec">초</span>
+          </div>
+          <div class="getTargetTime" id="getTargetTime">
+            <h1>알림 받고 싶은 시간을 입력해 주세요 5초 전부터 알림을 합니다.</h1>
+            <p>2024,01,22,17,31 형식으로 날짜와 시간을 입력해 주세요. 꼭! 양식을 지켜서</p><input id="getTime" type="text" placeholder="2024,01,22,17,31">
+            <button id="checkBtn">확인</button>
+            <p id="checkAlarmTime" value=""></p>
+            <p id="checkAlarmCount" value=""></p>
+            <div class="targetTimeZone" id="targetTimeZoneDiv">
+              <span id="targetDays" value=""></span>
+              <span id="targetHours"value=""></span>
+              <span id="targetMin"value=""></span>
+              <span id="targetSec"value=""></span>
+            </div>
+          </div>
+        </div>
+      </main>  
+      <div class="footer">
+        <div class="container3">
+        © 2023. <a href="https://ozcodingschool.com/" target="_blank">ozcodingschool</a>. All rights
+        reserved. Developed by <a href="#">[BE_02_신현민]</a>.
+        </div>
+      </div>
+      <script src="./countdown-timer_신현민.js">
+        // JavaScript로 타이머 구현
+      </script>
+</body>
+</html>
