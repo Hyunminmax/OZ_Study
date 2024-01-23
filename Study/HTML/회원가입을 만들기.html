@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="x-ua-compatible" content="IE=edge">
+    <title>회원가입을 만들기</title>
+</head>
+<body>
+    <header>
+        <h1>회원가입</h1>
+    </header>
+    <main>
+        <form>
+            <fieldset>
+                <legend>필수 입력 사항</legend>
+                <ul>
+                    <table>
+                        <tr>
+                            <td>
+                                <li>
+                                    <label for="name">이름</label>
+                                </li>
+                            </td>
+                            <td>
+                                : <input type="text" name="name" id="name">
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>
+                                <li>
+                                    <label for="ID">ID</label>
+                                </li>
+                            </td>
+                            <td>
+                                : <input type="text" name="ID" id="ID" placeholder="6자 이상 20자 미만 공백없이 입력해주세요">
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>
+                                <li>
+                                    <labe for="PW">PW</label>
+                                </li>
+                            </td>
+                            <td>
+                                : <input type="text" name="PW" id="PW" placeholder="대소문자 구분합니다.16자 이상">
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>
+                                <li>
+                                    <label for="Email">Email</label>
+                                </li>
+                            </td>
+                            <td>
+                                : <input type="text" name="Email" id="Email" placeholder="example@example.com">
+                            </td>
+                        </tr>                    
+                        <tr>
+                            <td>
+                                <li>
+                                    <label for="phone">휴대폰</label>  
+                                </li>
+                            </td>
+                            <td>
+                                : <input type="text" name="phone" id="phone" placeholder="010-0000-0000">
+                            </td>
+                        </tr>       
+                        <tr>
+                            <td>
+                                <input type="submit" id="submit" name="submit" value="가입하기">   
+                            </td>
+                            <td>
+                                &nbsp;&nbsp;<input type="button" id="cancel" name="cancel" value="취소">
+                            </td>
+                        </tr>       
+                    </table>
+                </ul>
+            </fieldset>
+        </form>
+    </main>
+    <footer>
+        <fieldset>
+            <legend>취미</legend>
+            <ul>
+                <li>
+                    <input type="checkbox" name="hobby" id="coding">
+                    <label for="coding">코딩</label>  
+                    <input type="checkbox" name="hobby" id="exercise">
+                    <label for="exercise">운동</label>  
+                    <input type="checkbox" name="hobby" id="breathing">
+                    <label for="breathing">숨쉬기</label>  
+                    <input type="checkbox" name="hobby" id="travel">
+                    <label for="travel">여행</label>  
+                    <input type="checkbox" name="hobby" id="sleeping">
+                    <label for="sleeping">잠자기</label>  
+                    <input type="checkbox" name="hobby" id="reading">
+                    <label for="reading">독서</label>  
+                    <input type="checkbox" name="hobby" id="Netflix">
+                    <label for="Netflix">넷프릭스시청</label>  
+                </li>
+                <li>
+                    <input type="radio" name="sex" id="man">
+                    <label for="man">남</label>  
+                    <input type="radio" name="sex" id="woman">
+                    <label for="woman">여</label>  
+                    <input type="radio" name="sex" id="other">
+                    <label for="other">카메라</label>  
+                </li>
+            </ul>
+        </fieldset>        
+
+    </footer>
+</body>
+</html>

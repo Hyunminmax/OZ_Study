@@ -1,0 +1,220 @@
+<!DOCTYPE html>
+<html lang="ko">
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="x-ua-compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+        <title>미트마켓</title>
+        <style>
+            *{
+                box-sizing: border-box;
+            }
+            html{
+                font-size: 16px;
+            }
+            body{
+                margin: 0;
+            }
+            .flex{
+                display: flex;
+            }
+            .main{
+                padding: 4rem 0 5rem;
+            }
+        </style>
+        <link href="./header.css"  rel="stylesheet">
+        <link href="./info.css"  rel="stylesheet">
+        <link href="./notice.css"  rel="stylesheet">
+        <link href="./banner.css"  rel="stylesheet">
+        <link href="./footer.css"  rel="stylesheet">
+    </head>
+    <body>
+        <div class="container">
+            <header class="header">
+                <div class="header-content flex">
+                    <div class="header-content__logo">미트마켓</div>
+                    <nav class="header-content__nav flex">
+                        <ul>
+                            <li>고기거래</li>
+                            <li>동네정육점</li>
+                            <li class="active">알바</li>
+                            <li>소고기 직거래</li>
+                            <li>돼지고기 직거래</li>
+                        </ul>
+                    </nav>
+                    <div class="header-content__input flex">
+                        <span class="icon glass">
+                            <input type="button" value="&#128269;">
+                        </span>
+                        <span>
+                            <input type="text" id="serch" class="search" placeholder="고기나 동네를 검색해보세요">
+                        </span>
+                        <span class="icon menu">
+                            <input type="button" value="&#9776;">
+                        </span>
+                        <span>
+                            <input type="button" class="chat" value="채팅하기">
+                        </span>
+                    </div>
+                </div>
+            </header>
+            <main class="main">
+                <section class="info">
+                    <div class="info__text">
+                        <h1>우리 동네에서 찾는<br>미트알바</h1>
+                        <p>걸어서 10분 거리의<br>동네 알바 여기 다 있어요.</p>
+                    </div>
+                </section>
+                <section class="notice">
+                    <h2 class="notice__title">인기 미트알바</h2>
+                    <div class="notice__container flex">
+                        <article class="notice__item flex">
+                            <div class="notice__thumb"></div>
+                            <div class="notice__content">
+                                <div class="notice__content__title">미트마켓 고객센터 단기계약직 모집(1달 계약직)</div>
+                                <div class="notice__content__address">주식회사 미트서비스 - 지구상 한반도의 대한민국의 어딘가</div>
+                                <div class="notice__content__pay">월급 3,000,000</div>
+                            </div>
+                        </article>
+                        <article class="notice__item flex">
+                            <div class="notice__thumb"></div>
+                            <div class="notice__content">
+                                <div class="notice__content__title">미트마켓 고객센터 단기계약직 모집(1달 계약직)</div>
+                                <div class="notice__content__address">주식회사 미트서비스 - 지구상 한반도의 대한민국의 어딘가</div>
+                                <div class="notice__content__pay">월급 3,000,000</div>
+                            </div>
+                        </article>
+                        <article class="notice__item flex">
+                            <div class="notice__thumb"></div>
+                            <div class="notice__content">
+                                <div class="notice__content__title">미트마켓 고객센터 단기계약직 모집(1달 계약직)</div>
+                                <div class="notice__content__address">주식회사 미트서비스 - 지구상 한반도의 대한민국의 어딘가</div>
+                                <div class="notice__content__pay">월급 3,000,000</div>
+                            </div>
+                        </article>
+                        <article class="notice__item flex">
+                            <div class="notice__thumb"></div>
+                            <div class="notice__content">
+                                <div class="notice__content__title">미트마켓 고객센터 단기계약직 모집(1달 계약직)</div>
+                                <div class="notice__content__address">주식회사 미트서비스 - 지구상 한반도의 대한민국의 어딘가</div>
+                                <div class="notice__content__pay">월급 3,000,000</div>
+                            </div>
+                        </article>
+                        <article class="notice__item flex">
+                            <div class="notice__thumb"></div>
+                            <div class="notice__content">
+                                <div class="notice__content__title">미트마켓 고객센터 단기계약직 모집(1달 계약직)</div>
+                                <div class="notice__content__address">주식회사 미트서비스 - 지구상 한반도의 대한민국의 어딘가</div>
+                                <div class="notice__content__pay">월급 3,000,000</div>
+                            </div>
+                        </article>
+                    </div>
+                    <div class="banner flex">
+                        <div class="banner__text">미트알바 이용방법이 궁금하다면<br>지금 바로 알아보세요.</div>
+                        <button class="banner__button">이용방법 알아보기</button>
+                    </div>
+                </section>
+                <section class="notice">
+                    <div class="notice__container flex">
+                        <article class="notice__item flex">
+                            <div class="notice__thumb"></div>
+                            <div class="notice__content">
+                                <div class="notice__content__title">미트마켓 고객센터 단기계약직 모집(1달 계약직)</div>
+                                <div class="notice__content__address">주식회사 미트서비스 - 지구상 한반도의 대한민국의 어딘가</div>
+                                <div class="notice__content__pay">월급 3,000,000</div>
+                            </div>
+                        </article>
+                        <article class="notice__item flex">
+                            <div class="notice__thumb"></div>
+                            <div class="notice__content">
+                                <div class="notice__content__title">미트마켓 고객센터 단기계약직 모집(1달 계약직)</div>
+                                <div class="notice__content__address">주식회사 미트서비스 - 지구상 한반도의 대한민국의 어딘가</div>
+                                <div class="notice__content__pay">월급 3,000,000</div>
+                            </div>
+                        </article>
+                        <article class="notice__item flex">
+                            <div class="notice__thumb"></div>
+                            <div class="notice__content">
+                                <div class="notice__content__title">미트마켓 고객센터 단기계약직 모집(1달 계약직)</div>
+                                <div class="notice__content__address">주식회사 미트서비스 - 지구상 한반도의 대한민국의 어딘가</div>
+                                <div class="notice__content__pay">월급 3,000,000</div>
+                            </div>
+                        </article>
+                        <article class="notice__item flex">
+                            <div class="notice__thumb"></div>
+                            <div class="notice__content">
+                                <div class="notice__content__title">미트마켓 고객센터 단기계약직 모집(1달 계약직)</div>
+                                <div class="notice__content__address">주식회사 미트서비스 - 지구상 한반도의 대한민국의 어딘가</div>
+                                <div class="notice__content__pay">월급 3,000,000</div>
+                            </div>
+                        </article>
+                        <article class="notice__item flex">
+                            <div class="notice__thumb"></div>
+                            <div class="notice__content">
+                                <div class="notice__content__title">미트마켓 고객센터 단기계약직 모집(1달 계약직)</div>
+                                <div class="notice__content__address">주식회사 미트서비스 - 지구상 한반도의 대한민국의 어딘가</div>
+                                <div class="notice__content__pay">월급 3,000,000</div>
+                            </div>
+                        </article>
+                    </div>
+                    <div class="banner flex">
+                        <div class="banner__text">미트알바 이용방법이 궁금하다면<br>지금 바로 알아보세요.</div>
+                        <button class="banner__button">이용방법 알아보기</button>
+                    </div>
+                </section>
+            </main>
+            <footer class="footer">
+                <div class="footer__container">
+                    <section class="footer__menu">
+                        <div class="footer__apps">
+                            <div class="footer__appdown">미트마켓 앱 다운로드</div>
+                            <div class="footer__appbtn flex">
+                                <button>App Store</button>
+                                <button>Google Play</button>
+                            </div>
+                        </div>
+                        <nav class="footer__nav flex">
+                            <ul>
+                                <li>중고거래</li>
+                                <li>중고거래</li>
+                                <li>중고거래</li>
+                                <li>중고거래</li>
+                                <li>중고거래</li>
+                            </ul>
+                            <ul>
+                                <li>중고거래</li>
+                                <li>중고거래</li>
+                            </ul>
+                            <ul>
+                                <li>중고거래</li>
+                                <li>중고거래</li>
+                                <li>중고거래</li>
+                            </ul>
+                        </nav>
+                    </section>
+                    <section class="footer__info">
+                        <div>
+                            <strong>대표</strong> 신현민 | <strong>사업자번호</strong> 123-45-12345
+                        </div>
+                        <div>
+                            <strong>고기정보제공사업 신고번호</strong>2024-한국한국-0039
+                        </div>
+                        <div>
+                            <strong>주소</strong> 지구 대한민국 경기도 123-45-12345호
+                        </div>
+                        <div>
+                            <strong>전화</strong> 1588-1588 | <strong>고객문의</strong> cs@meatmarket.com
+                        </div>
+                        <p>
+                            <strong>이용약관</strong>&nbsp;&nbsp;
+                            <strong style="color: black;">개인정보처리방침</strong>&nbsp;&nbsp;
+                            <strong>위치기반서비스 이용약관</strong>&nbsp;&nbsp;
+                            <strong>이용자보호 비전과 계획</strong>&nbsp;&nbsp;
+                        </p>
+                    </section>
+                </div>
+            </footer>
+        </div>
+    </body>
+</html>

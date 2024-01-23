@@ -1,0 +1,40 @@
+*{
+    font-family: 'Nanum Pen Script', 'Dokdo', system-ui, cursive;
+    text-align: center;
+
+}
+html{
+    background-color: darkolivegreen;
+    font-size: 30px;
+}
+
+body{
+    width: 800px;
+    margin: auto;
+}
+h1{
+    font-size: 3rem;
+}
+h2{
+    font-size: 2rem;
+}
+
+img{
+    width: 300px;
+    height: 300px;
+    border-radius: 150px ;
+}
+p{
+    font-size: 1.2rem;
+    color: beige;
+}
+
+@keyframes blink-effect {
+    50% {
+      opacity: 0;
+    }
+  }
+  
+  .blink {
+    animation: blink-effect 1s step-end infinite;
+  }

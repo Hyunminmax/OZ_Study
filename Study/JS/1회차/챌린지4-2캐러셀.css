@@ -1,0 +1,17 @@
+*{
+    box-sizing: border-box;
+}
+.carousel-area{
+    width: 640px;
+    overflow: hidden;
+
+}
+.carousel{
+    display: flex;
+    transform: translate3d(0, 0, 0);
+    transition: transform 3s;
+}
+.carousel img{
+    width: 640px;
+    
+}

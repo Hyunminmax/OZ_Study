@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="ko">
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="x-ua-compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <style>
+            *{
+                box-sizing: border-box;
+            }
+            body{
+                margin: 0;
+            }
+            .flex{
+                display: flex;
+            }
+        </style>
+        <link href="./챌린지16_oz코딩.css" rel="stylesheet">
+        <title>Oz코딩_신현민</title>
+    </head>
+    <body>
+        <div class="container">
+            <!-- 상단 메뉴 영역 -->
+            <header>
+                <!--상단이미지-->
+                <div class="head-image-area">
+                    <!-- 제목 -->
+                    <div class="head-image-area-bottom-message">
+                        <p>코린이 </p>
+                        <img id="eggs" src="../Images/icons8-eggs-100.png" alt="eggs">
+                        <p>깨고 </p>
+                        <img src="../Images/icons8-chicken-100.png" alt="chicken">
+                        <p>되는 그날까지!!</p>
+                        </p>
+                    </div>
+                </div>
+                <!-- 상단 메뉴 -->
+                <nav class="menu__bar flex">
+                    <div class="logo">OZ</div>
+                    <ul class="menu__bar__menu">
+                        <li>오즈코딩 스쿨</li>
+                        <li>HTML</li>
+                        <li>CSS</li>
+                        <li>커리큘럼</li>
+                        <li>문의사항</li>
+                    </ul>
+                    <label id="hamburger-check-label" for="hamburger-check" style="display: none;">""</label>
+                    <input id="hamburger-check" class="hamburger" type="checkbox">
+                </nav>
+                <ul class="submenu">
+                    <li>오즈코딩 스쿨</li>
+                    <li>HTML</li>
+                    <li>CSS</li>
+                    <li>커리큘럼</li>
+                    <li>문의사항</li>
+                </ul>
+            </header>
+            <!-- 메인 화면 -->
+            <main>
+                <div class="container__main flex">
+                    <ul class="main__list">
+                        <li>
+                            <div class="about">ABOUT</div>
+                        </li>
+                        <li>
+                            <div class="OZ__name">OZ코딩스쿨</div>
+                        </li>
+                        <li id="point__area">
+                            <div class="points">
+                                <div class="point__card">
+                                    <a href="https://ozcodingschool.com/ozcoding/bizdevcamp">
+                                        <img src="../5회차/about_1.svg">
+                                    </a>
+                                </div>
+                                <div class="point__card">
+                                    <a href="https://ozcodingschool.com/ozcoding/startupcamp">
+                                        <img src="../5회차/about_2.svg">
+                                    </a>
+                                </div>
+                                <div class="point__card">
+                                    <a href="https://ozcodingschool.com/ozcoding/oznightschool">
+                                        <img src="../5회차/about_3.svg">
+                                    </a>
+                                </div>
+                            </div>
+                        </li>
+                    </ul>
+                </div>
+            </main>
+        </div>
+    </body>
+</html>

@@ -1,0 +1,58 @@
+.hamburger-bar{
+    display: flex;
+    justify-content: flex-start;
+    height: 5%;
+    width: 100%;
+    background-color: darkslategray;
+}
+
+
+.hamburger-bar div{
+display: flex;
+justify-content: center;
+align-items: center;
+height: 50px;
+}
+
+.hamburger-bar p{
+    margin: 0;
+    color: white;
+}
+
+.hamburger-bar__home{
+    width: 50px;
+    background-color: green;
+}
+.hamburger-bar__introduce{
+    width: 70px;
+}
+.hamburger-bar__service{
+    width: 70px;
+}
+.hamburger-bar__contect{
+    width: 70px;
+}
+
+
+.hamburger-bar2{
+    display: none;
+    height: 250px;
+    width: 100%;
+    background-color: burlywood;
+    background-image: url(../Images/icons8-picnic-blanket-64.png);
+}
+.hamburger-bar2 div{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 50px;
+    }
+
+@media screen and (max-width: 550px) {
+    .hamburger-bar{
+        display: none;
+    }
+    .hamburger-bar2{
+        display: block;
+    }
+}
