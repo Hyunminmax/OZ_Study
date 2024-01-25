@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <title>Admin Page Project</title>
+    <meta charset="UTF-8">
+    <meta http-equiv="x-ua-compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/css/bootstrap.min.css" 
+        rel="stylesheet" 
+        integrity="sha384-4bw+/aepP/YC94hEpVNVgiZdgIC5+VKNBQNGCHeKRQN+PtmoHDEXuppvnDJzQIu9" 
+        crossorigin="anonymous"
+    >
+    <!--어드민 프로젝트 필수요구사항
+    - (O)카테고리(셀렉트)를 클릭하면 상의, 하의, 신발, 패션잡화 메뉴가 나오게 코드 작성 
+    - (O)입력 버튼 안에 “제품명을 입력해주세여”가 나오게 코드 작성
+    - (O)조회 버튼이 입력창 옆에 붙어 있도록 코드 작성
+    - (O)테이블을 이용해 최 상단에는 속성 값을 넣고 하단에는 데이터가 입력되도록 코드 작성
+    - (O)최하단에는 페이지 네이션 기능이 나타나도록 코드 작성
+    -->
+    <!--어드민 프로젝트 추가구성사항
+    - (O)성별로 구별할 수 있는 버튼 또는 테이블 속성값에 성별을 구분할 수 있는 속성을 넣어주세요
+    - (v)카테고리 앞에 체크 박스를 하나씩 넣어주고, 선택된 체크 박스를 삭제하는 버튼을 만들어주세요 그 위치는 조회 버튼이 있는 
+         라인의 가장 끝에 위치했으면 좋겠습니다.
+    - ( )신규 등록 상품 옆에  신규 등록 상품 (2024-01-22) 형태로 변경해주시고요 날짜는 업데이트된 일자가 반영되도록 만들어주세요
+    - ( )테이블 하단 또는 상단에 github 아이콘을 넣어주세요 그리고 이미지 클릭하면 여러분의 깃허브 주소로 이동하도록 만들주세요
+    -->
+</head>
+<body><!--style="background-color: blanchedalmond;">-->
+    <div class="container mt-3">
+        <h3 class="mt-5 mb-3">신규 등록 상품</h3>
+        <form class="row row-cols-lg-auto g-3 align-items-center">      
+            <div class="col-12">
+                <label class="visually-hidden" for="inlineFormSelectPref">Preference</label>
+                <!-- 카테고리 셀렉트-->
+                <select class="form-select" aria-label="Default select example">
+                  <option selected disabled>--카테고리--</option>
+                  <option value="1">상의</option>
+                  <option value="2">하의</option>
+                  <option value="3">신발</option>
+                  <option value="4">패션잡화</option>
+                </select>
+            </div>
+            <!-- 성별 라디오-->
+            <div class="form-check">
+              <input class="form-check-input" type="radio" name="flexRadioDefault" id="flexRadioDefault1">
+              <label class="form-check-label" for="flexRadioDefault1">
+                남성
+              </label>
+            </div>
+            <div class="form-check">
+              <input class="form-check-input" type="radio" name="flexRadioDefault" id="flexRadioDefault1">
+              <label class="form-check-label" for="flexRadioDefault1">
+                여성
+              </label>
+            </div>
+            <div class="form-check">
+              <input class="form-check-input" type="radio" name="flexRadioDefault" id="flexRadioDefault2" checked>
+              <label class="form-check-label" for="flexRadioDefault2">
+                공용
+              </label>
+            </div>
+            <div class="col-3">
+              <!-- input 입력창-->
+              <input type="text" class="form-control" id="autoSizingInput" placeholder="제품명을 입력해주세요.">
+            </div>
+            <div class="col-auto">
+              <!-- 조회버튼-->
+              <button type="submit" class="btn btn-outline-success">조회</button>
+            </div>
+        </form>
+
+        <div class="container mt-3">
+            <!--테이블-->
+            <table class="table" id="data-table">
+                <thead>
+                <!--열의 속성값(예 : 카테고리, 브랜드, 상품명, 가격)-->
+                  <tr>
+                    <!--카테고리-->
+                    <th scope="col">카테고리</th>
+                    <!--브랜드-->
+                    <th scope="col">브랜드</th>
+                    <!--성별-->
+                    <th scope="col">성별</th>
+                    <!--상품명-->
+                    <th scope="col">상품명</th>
+                    <!--가격-->
+                    <th scope="col">가격</th>
+                  </tr>
+                </thead>
+                <tbody>
+                <!--크롤링한 데이터-->
+                </tbody>
+            </table>
+        </div>
+    <!--페이지네이션-->
+    <nav aria-label="Page navigation example">
+      <ul class="pagination justify-content-center">
+          <li class="page-item">
+            <a class="page-link" href="#" aria-label="Previous">
+              <span aria-hidden="true">&laquo;</span>
+            </a>
+          </li>
+          <li class="page-item"><a class="page-link" href="#">1</a></li>
+          <li class="page-item"><a class="page-link" href="#">2</a></li>
+          <li class="page-item"><a class="page-link" href="#">3</a></li>
+          <li class="page-item">
+            <a class="page-link" href="#" aria-label="Next">
+              <span aria-hidden="true">&raquo;</span>
+            </a>
+          </li>
+        </ul>
+    </nav>
+   
+      
+   
+   <script>
+      // 크롤링한 데이터를 아래와 같은 형태의 객체 배열로 가정합니다.
+      // 추후 데이터베이스에 있는 데이터를 쿼리문으로 불러 올 수 있게 쿼리를 작성해 볼 수 있음
+      const data = [
+          { category: "상의",     brand: 'Supreme',     sex: '0',    product: '슈프림 박스로고 후드티', price: '390,000' },
+          { category: "하의",     brand: 'DIESEL',      sex: '1',    product: '디젤 트랙 팬츠',        price: '188,000' },
+          { category: "신발",     brand: 'Nike',        sex: '2',    product: '에어포스 1',            price: '137,000' },
+          { category: "패션잡화", brand: 'Music&Goods', sex: '0',    product: '빵빵이 키링',           price: '29,000' },
+          // ...
+      ];
+      
+      const dataTable = document.getElementById('data-table');
+      //Lambda(Arrow function으로 구현 된 코드)
+      data.forEach((item) => {
+          const row = dataTable.insertRow();
+          row.insertCell(0).innerHTML = item.category;
+          row.insertCell(1).innerHTML = item.brand;
+          if(item.sex == '1'){
+            row.insertCell(2).innerHTML = "남성";
+          }else if(item.sex == '2'){
+            row.insertCell(2).innerHTML = "여성";
+          }else{
+            row.insertCell(2).innerHTML = "공용";
+          }
+          
+          // switch(item.sex){
+          //   case '0':
+          //   row.insertCell(2).innerHTML = "공용";
+          //   case '1':
+          //   row.insertCell(2).innerHTML = "남성";
+          //   case '2':
+          //   row.insertCell(2).innerHTML = "여성";
+          // }
+          row.insertCell(3).innerHTML = item.product;
+          row.insertCell(4).innerHTML = item.price;
+      });
+      
+    </script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/js/bootstrap.bundle.min.js" 
+    integrity="sha384-HwwvtgBNo3bZJJLYd8oVXjrBZt8cqVSpeBNS5n7C8IVInixGAoxmnlMuBnhbgrkm" 
+    crossorigin="anonymous">
+    </script>
+</body>
+</html>
