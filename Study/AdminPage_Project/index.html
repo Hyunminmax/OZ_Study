@@ -19,141 +19,288 @@
     -->
     <!--어드민 프로젝트 추가구성사항
     - (O)성별로 구별할 수 있는 버튼 또는 테이블 속성값에 성별을 구분할 수 있는 속성을 넣어주세요
-    - (v)카테고리 앞에 체크 박스를 하나씩 넣어주고, 선택된 체크 박스를 삭제하는 버튼을 만들어주세요 그 위치는 조회 버튼이 있는 
+    - (O)카테고리 앞에 체크 박스를 하나씩 넣어주고, 선택된 체크 박스를 삭제하는 버튼을 만들어주세요 그 위치는 조회 버튼이 있는 
          라인의 가장 끝에 위치했으면 좋겠습니다.
     - ( )신규 등록 상품 옆에  신규 등록 상품 (2024-01-22) 형태로 변경해주시고요 날짜는 업데이트된 일자가 반영되도록 만들어주세요
-    - ( )테이블 하단 또는 상단에 github 아이콘을 넣어주세요 그리고 이미지 클릭하면 여러분의 깃허브 주소로 이동하도록 만들주세요
+    - (O)테이블 하단 또는 상단에 github 아이콘을 넣어주세요 그리고 이미지 클릭하면 여러분의 깃허브 주소로 이동하도록 만들주세요
     -->
-</head>
-<body><!--style="background-color: blanchedalmond;">-->
-    <div class="container mt-3">
-        <h3 class="mt-5 mb-3">신규 등록 상품</h3>
-        <form class="row row-cols-lg-auto g-3 align-items-center">      
-            <div class="col-12">
-                <label class="visually-hidden" for="inlineFormSelectPref">Preference</label>
-                <!-- 카테고리 셀렉트-->
-                <select class="form-select" aria-label="Default select example">
-                  <option selected disabled>--카테고리--</option>
-                  <option value="1">상의</option>
-                  <option value="2">하의</option>
-                  <option value="3">신발</option>
-                  <option value="4">패션잡화</option>
-                </select>
-            </div>
-            <!-- 성별 라디오-->
-            <div class="form-check">
-              <input class="form-check-input" type="radio" name="flexRadioDefault" id="flexRadioDefault1">
-              <label class="form-check-label" for="flexRadioDefault1">
-                남성
-              </label>
-            </div>
-            <div class="form-check">
-              <input class="form-check-input" type="radio" name="flexRadioDefault" id="flexRadioDefault1">
-              <label class="form-check-label" for="flexRadioDefault1">
-                여성
-              </label>
-            </div>
-            <div class="form-check">
-              <input class="form-check-input" type="radio" name="flexRadioDefault" id="flexRadioDefault2" checked>
-              <label class="form-check-label" for="flexRadioDefault2">
-                공용
-              </label>
-            </div>
-            <div class="col-3">
-              <!--input 입력창-->
-              <input type="text" class="form-control" id="autoSizingInput" placeholder="제품명을 입력해주세요.">
-            </div>
-            <div class="col-auto">
-              <!--조회버튼-->
-              <button type="submit" class="btn btn-outline-success">조회</button>
-            </div>
-        </form>
+    <style>
+      body{
+        background-color: bisque;
+      }
+      /* th 태그에 적용안됨 */
+      th{
+        background-color: burlywood;
+      }
+      /* th 태그에 적용안됨 */
+      table th{
+        background-color: burlywood;
+      }
+      .center{
+        text-align: center;
+      }
+      .right{
+        text-align: right;
+      }
 
-        <div class="container mt-3">
-            <!--테이블-->
-            <table class="table" id="data-table">
-                <thead>
-                <!--열의 속성값(예 : 카테고리, 브랜드, 상품명, 가격)-->
-                  <tr>
-                    <!--카테고리-->
-                    <th scope="col">카테고리</th>
-                    <!--브랜드-->
-                    <th scope="col">브랜드</th>
-                    <!--성별-->
-                    <th scope="col">성별</th>
-                    <!--상품명-->
-                    <th scope="col">상품명</th>
-                    <!--가격-->
-                    <th scope="col">가격</th>
-                  </tr>
-                </thead>
-                <tbody>
-                <!--크롤링한 데이터-->
-                </tbody>
-            </table>
-        </div>
-    <!--페이지네이션-->
-    <nav aria-label="Page navigation example">
-      <ul class="pagination justify-content-center">
-          <li class="page-item">
-            <a class="page-link" href="#" aria-label="Previous">
-              <span aria-hidden="true">&laquo;</span>
-            </a>
-          </li>
-          <li class="page-item"><a class="page-link" href="#">1</a></li>
-          <li class="page-item"><a class="page-link" href="#">2</a></li>
-          <li class="page-item"><a class="page-link" href="#">3</a></li>
-          <li class="page-item">
-            <a class="page-link" href="#" aria-label="Next">
-              <span aria-hidden="true">&raquo;</span>
-            </a>
-          </li>
-        </ul>
-    </nav>
+    </style>
+</head>
+<body>
+  <div class="container mt-3" style="position: sticky; top: 0px; background-color: bisque; padding-bottom: 10px;">
+    <!--상단로고-->
+    <div style="width: 100%; display: block;">
+      <a href="https://github.com/Hyunminmax/OZ_Study/tree/main/Study/AdminPage_Project">
+        <img src="../Images/pngimg.com - github_PNG93.png" alt="myGitHubLink" style="height: 90px;">
+      </a>
+    </div>
+    <!--신규등록상품, 날짜-->
+    <div>
+      <h3 style="margin: 10px 0 10px 0; display: inline;">신규 등록 상품</h3>
+      <button type="button" id="toDay" class="btn btn-primary position-relative" style="padding: 0px 8px 0px; position: relative; top: -5px; background-color: transparent; color: black; border-width: 0;"></button>
+    </div>
+    <!--조회 폼-->
+    <form class="row row-cols-lg-auto g-3 align-items-center">      
+      <!--카테고리 셀렉트-->
+      <div class="col-12">
+        <!-- 카테고리 셀렉트-->
+        <select class="form-select" aria-label="Default select example">
+          <option selected disabled>--카테고리--</option>
+          <option value="0">전체</option>
+          <option value="1">상의</option>
+          <option value="2">하의</option>
+          <option value="3">신발</option>
+          <option value="4">패션잡화</option>
+        </select>
+      </div>
+      <!--성별 라디오-->
+      <div class="form-check">
+        <input class="form-check-input" type="radio" name="flexRadioDefault" id="flexRadioDefault1">
+        <label class="form-check-label" for="flexRadioDefault1">
+          남성
+        </label>
+      </div>
+      <div class="form-check">
+        <input class="form-check-input" type="radio" name="flexRadioDefault" id="flexRadioDefault1">
+        <label class="form-check-label" for="flexRadioDefault1">
+          여성
+        </label>
+      </div>
+      <div class="form-check">
+        <input class="form-check-input" type="radio" name="flexRadioDefault" id="flexRadioDefault2" checked>
+        <label class="form-check-label" for="flexRadioDefault2">
+          공용
+        </label>
+      </div>
+      <!--제품명 입력창-->
+      <div class="col-3">
+        <input type="text" class="form-control" id="autoSizingInput" placeholder="제품명을 입력해주세요.">
+      </div>
+      <!--조회버튼-->
+      <div class="col-auto">
+        <button type="submit" id="submitBtn" class="btn btn-outline-success">조회</button>
+      </div>
+      <!--삭제버튼-->
+      <div class="col-auto">
+        <button type="button" id="deleteBtn" class="btn btn-outline-danger">삭제</button>
+      </div>
+    </form>
+  </div>
+  <!--테이블-->
+  <div class="container mt-3">
+      <!--테이블-->
+      <table class="table" id="data-table">
+        <!--테이블 헤드-->
+        <thead>
+          <!--열의 속성값(예 : 삭제체크박스, 카테고리, 브랜드, 상품명, 가격)-->
+          <tr style="position: sticky; top: 173px; text-align: center; border-width: 2px; border-color: black;">
+            <!--삭제체크박스-->
+            <th scope="col" style="background-color: burlywood; border-width: 2px; border-color: black;">삭제</th>
+            <!--카테고리-->
+            <th scope="col" style="background-color: burlywood; border-width: 2px; border-color: black;">카테고리</th>
+            <!--브랜드-->
+            <th scope="col" style="background-color: burlywood; border-width: 2px; border-color: black;">브랜드</th>
+            <!--성별-->
+            <th scope="col" style="background-color: burlywood; border-width: 2px; border-color: black;">성별</th>
+            <!--상품명-->
+            <th scope="col" style="background-color: burlywood; border-width: 2px; border-color: black;">상품명</th>
+            <!--가격-->
+            <th scope="col" style="background-color: burlywood; border-width: 2px; border-color: black;">가격</th>
+          </tr>
+        </thead>
+          <!--테이블 바디-->
+        <tbody>
+          <!--크롤링한 데이터-->
+        </tbody>
+      </table>
+  </div>
+  <!--페이지네이션-->
+  <nav aria-label="Page navigation example">
+    <ul class="pagination justify-content-center">
+        <li class="page-item">
+          <a class="page-link" href="#" aria-label="Previous">
+            <span aria-hidden="true">&laquo;</span>
+          </a>
+        </li>
+        <li class="page-item"><a class="page-link" href="#">1</a></li>
+        <li class="page-item"><a class="page-link" href="#">2</a></li>
+        <li class="page-item"><a class="page-link" href="#">3</a></li>
+        <li class="page-item">
+          <a class="page-link" href="#" aria-label="Next">
+            <span aria-hidden="true">&raquo;</span>
+          </a>
+        </li>
+      </ul>
+  </nav>
    
       
    
-   <script>
-      // 크롤링한 데이터를 아래와 같은 형태의 객체 배열로 가정합니다.
-      // 추후 데이터베이스에 있는 데이터를 쿼리문으로 불러 올 수 있게 쿼리를 작성해 볼 수 있음
-      const data = [
-          { category: "상의",     brand: 'Supreme',     sex: '0',    product: '슈프림 박스로고 후드티', price: '390,000' },
-          { category: "하의",     brand: 'DIESEL',      sex: '1',    product: '디젤 트랙 팬츠',        price: '188,000' },
-          { category: "신발",     brand: 'Nike',        sex: '2',    product: '에어포스 1',            price: '137,000' },
-          { category: "패션잡화", brand: 'Music&Goods', sex: '0',    product: '빵빵이 키링',           price: '29,000' },
-          // ...
-      ];
+  <script>
+    // 오늘 날짜 넣기
+    // DOM으로 날짜 넣을 ElementID받기
+    const today = document.getElementById('toDay')
+    // 오늘 날짜 생성
+    const todayDate = new Date()
+    const weekday = []
+      weekday[0] = "일요일";
+      weekday[1] = "월요일";
+      weekday[2] = "화요일";
+      weekday[3] = "수요일";
+      weekday[4] = "목요일";
+      weekday[5] = "금요일";
+      weekday[6] = "토요일";
+    toDay = todayDate.getFullYear() + '-' 
+          + todayDate.getMonth() + 1 + '-' 
+          + ('0' + todayDate.getDate()).slice(-2) + ' '
+          + weekday[todayDate.getDay()]
+    // 오늘 날짜 랜더링 오늘 데이터가 있다면 뱃지를 붙인다.
+    if(!true){
+      today.innerHTML = toDay + '<span class="position-absolute top-0 start-100 translate-middle p-2 bg-danger border border-light rounded-circle"></span>'
+    }else{
+      today.innerHTML = toDay
+    }
+    
+
+
+    // 크롤링한 데이터를 아래와 같은 형태의 객체 배열로 가정합니다.
+    // 추후 데이터베이스에 있는 데이터를 쿼리문으로 불러 올 수 있게 쿼리를 작성해 볼 수 있음
+    const data = [
+        { category: "상의",     brand: 'Supreme',     sex: '0',    product: '슈프림 박스로고 후드티', price: '390,000' },
+        { category: "하의",     brand: 'DIESEL',      sex: '1',    product: '디젤 트랙 팬츠',        price: '188,000' },
+        { category: "신발",     brand: 'Nike',        sex: '2',    product: '에어포스 1',            price: '137,000' },
+        { category: "패션잡화", brand: 'Music&Goods', sex: '0',    product: '빵빵이 키링',           price: '29,000' },
+        { category: "상의",     brand: 'Supreme',     sex: '0',    product: '슈프림 박스로고 후드티', price: '390,000' },
+        { category: "하의",     brand: 'DIESEL',      sex: '1',    product: '디젤 트랙 팬츠',        price: '188,000' },
+        { category: "신발",     brand: 'Nike',        sex: '2',    product: '에어포스 1',            price: '137,000' },
+        { category: "패션잡화", brand: 'Music&Goods', sex: '0',    product: '빵빵이 키링',           price: '29,000' },
+        { category: "상의",     brand: 'Supreme',     sex: '0',    product: '슈프림 박스로고 후드티', price: '390,000' },
+        { category: "하의",     brand: 'DIESEL',      sex: '1',    product: '디젤 트랙 팬츠',        price: '188,000' },
+        { category: "신발",     brand: 'Nike',        sex: '2',    product: '에어포스 1',            price: '137,000' },
+        { category: "패션잡화", brand: 'Music&Goods', sex: '0',    product: '빵빵이 키링',           price: '29,000' },
+        { category: "상의",     brand: 'Supreme',     sex: '0',    product: '슈프림 박스로고 후드티', price: '390,000' },
+        { category: "하의",     brand: 'DIESEL',      sex: '1',    product: '디젤 트랙 팬츠',        price: '188,000' },
+        { category: "신발",     brand: 'Nike',        sex: '2',    product: '에어포스 1',            price: '137,000' },
+        { category: "패션잡화", brand: 'Music&Goods', sex: '0',    product: '빵빵이 키링',           price: '29,000' },
+        { category: "상의",     brand: 'Supreme',     sex: '0',    product: '슈프림 박스로고 후드티', price: '390,000' },
+        { category: "하의",     brand: 'DIESEL',      sex: '1',    product: '디젤 트랙 팬츠',        price: '188,000' },
+        { category: "신발",     brand: 'Nike',        sex: '2',    product: '에어포스 1',            price: '137,000' },
+        { category: "패션잡화", brand: 'Music&Goods', sex: '0',    product: '빵빵이 키링',           price: '29,000' },
+        { category: "상의",     brand: 'Supreme',     sex: '0',    product: '슈프림 박스로고 후드티', price: '390,000' },
+        { category: "하의",     brand: 'DIESEL',      sex: '1',    product: '디젤 트랙 팬츠',        price: '188,000' },
+        { category: "신발",     brand: 'Nike',        sex: '2',    product: '에어포스 1',            price: '137,000' },
+        { category: "패션잡화", brand: 'Music&Goods', sex: '0',    product: '빵빵이 키링',           price: '29,000' },
+        { category: "상의",     brand: 'Supreme',     sex: '0',    product: '슈프림 박스로고 후드티', price: '390,000' },
+        { category: "하의",     brand: 'DIESEL',      sex: '1',    product: '디젤 트랙 팬츠',        price: '188,000' },
+        { category: "신발",     brand: 'Nike',        sex: '2',    product: '에어포스 1',            price: '137,000' },
+        { category: "패션잡화", brand: 'Music&Goods', sex: '0',    product: '빵빵이 키링',           price: '29,000' },
+        // ...
+    ];
+    
+    //크롤링 데이터 중 조회 조건에 맞는 데이터만 랜더링
+    //조회 결과를 저장할 배열 선언
+    let selectedData = []
+
+    //조회 이벤트 호출
+    //DOM Element 선언
+    const serchBtn = document.getElementById('submitBtn')
+
+    //조회 이벤트리스너 선언
+    serchBtn.addEventListener('click', function(e){
+      //submit 버튼의 폼제출 기능을 비활성
+      e.preventDefault();
+      //카테고리값
+      //성별값
+      //제품명
       
-      const dataTable = document.getElementById('data-table');
-      //Lambda(Arrow function으로 구현 된 코드)
-      data.forEach((item) => {
-          const row = dataTable.insertRow();
-          row.insertCell(0).innerHTML = item.category;
-          row.insertCell(1).innerHTML = item.brand;
-          if(item.sex == '1'){
-            row.insertCell(2).innerHTML = "남성";
-          }else if(item.sex == '2'){
-            row.insertCell(2).innerHTML = "여성";
-          }else{
-            row.insertCell(2).innerHTML = "공용";
-          }
-          
-          // switch(item.sex){
-          //   case '0':
-          //   row.insertCell(2).innerHTML = "공용";
-          //   case '1':
-          //   row.insertCell(2).innerHTML = "남성";
-          //   case '2':
-          //   row.insertCell(2).innerHTML = "여성";
-          // }
-          row.insertCell(3).innerHTML = item.product;
-          row.insertCell(4).innerHTML = item.price;
-      });
-      
-    </script>
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/js/bootstrap.bundle.min.js" 
-    integrity="sha384-HwwvtgBNo3bZJJLYd8oVXjrBZt8cqVSpeBNS5n7C8IVInixGAoxmnlMuBnhbgrkm" 
-    crossorigin="anonymous">
-    </script>
+      serch()
+    })
+    
+    
+    //조회 함수
+    function serch(category, sex, title){
+      for(let i = 0; i < data.length; i ++){
+        console.log("a")
+      }
+
+    }
+
+
+
+    const dataTable = document.getElementById('data-table');
+    //Lambda(Arrow function으로 구현 된 코드)
+    //데이터 배열 받아서 랜더링
+    data.forEach((item) => {
+
+        const row = dataTable.insertRow();
+        let cellIndex_0 = row.insertCell(0)
+        let cellIndex_1 = row.insertCell(1)
+        let cellIndex_2 = row.insertCell(2)
+        let cellIndex_3 = row.insertCell(3)
+        let cellIndex_4 = row.insertCell(4)
+        let cellIndex_5 = row.insertCell(5)
+        
+        //성별 값에 따라 랜더링
+        if(item.sex == '1'){
+          cellIndex_3.innerHTML = "남성";
+        }else if(item.sex == '2'){
+          cellIndex_3.innerHTML = "여성";
+        }else{
+          cellIndex_3.innerHTML = "공용";
+        }
+        
+        cellIndex_0.innerHTML = '<input class="form-check-input" type="checkbox" value="" id="flexCheckDefault">';
+        cellIndex_1.innerHTML = item.category;
+        cellIndex_2.innerHTML = item.brand;
+        cellIndex_4.innerHTML = item.product;
+        cellIndex_5.innerHTML = item.price;
+        
+        cellIndex_0.classList.add("center")
+        cellIndex_1.classList.add("center")
+        cellIndex_2.classList.add("center")
+        cellIndex_3.classList.add("center")
+        cellIndex_4.classList.add("center")
+        cellIndex_5.classList.add("right")
+        
+        // row.insertCell(0).innerHTML = '<input class="form-check-input" type="checkbox" value="" id="flexCheckDefault">';
+        // row.insertCell(1).innerHTML = item.category;
+        // row.insertCell(2).innerHTML = item.brand;
+        
+        
+        // switch(item.sex){
+        //   case '0':
+        //   row.insertCell(2).innerHTML = "공용";
+        //   case '1':
+        //   row.insertCell(2).innerHTML = "남성";
+        //   case '2':
+        //   row.insertCell(2).innerHTML = "여성";
+        // }
+        // row.insertCell(4).innerHTML = item.product;
+        // row.insertCell(5).innerHTML = item.price;
+    });
+
+  </script>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/js/bootstrap.bundle.min.js" 
+  integrity="sha384-HwwvtgBNo3bZJJLYd8oVXjrBZt8cqVSpeBNS5n7C8IVInixGAoxmnlMuBnhbgrkm" 
+  crossorigin="anonymous">
+  </script>
 </body>
 </html>
