@@ -63,37 +63,37 @@
       <!--카테고리 셀렉트-->
       <div class="col-12">
         <!-- 카테고리 셀렉트-->
-        <select class="form-select" aria-label="Default select example">
+        <select id="categorySelect" class="form-select" aria-label="Default select example">
           <option selected disabled>--카테고리--</option>
-          <option value="0">전체</option>
-          <option value="1">상의</option>
-          <option value="2">하의</option>
-          <option value="3">신발</option>
-          <option value="4">패션잡화</option>
+          <option value="전체">전체</option>
+          <option value="상의">상의</option>
+          <option value="하의">하의</option>
+          <option value="신발">신발</option>
+          <option value="패션잡화">패션잡화</option>
         </select>
       </div>
       <!--성별 라디오-->
       <div class="form-check">
-        <input class="form-check-input" type="radio" name="flexRadioDefault" id="flexRadioDefault1">
+        <input class="form-check-input" type="radio" name="sexRadioBtn" id="flexRadioDefault1" value="1">
         <label class="form-check-label" for="flexRadioDefault1">
           남성
         </label>
       </div>
       <div class="form-check">
-        <input class="form-check-input" type="radio" name="flexRadioDefault" id="flexRadioDefault1">
+        <input class="form-check-input" type="radio" name="sexRadioBtn" id="flexRadioDefault2" value="2">
         <label class="form-check-label" for="flexRadioDefault1">
           여성
         </label>
       </div>
       <div class="form-check">
-        <input class="form-check-input" type="radio" name="flexRadioDefault" id="flexRadioDefault2" checked>
+        <input class="form-check-input" type="radio" name="sexRadioBtn" id="flexRadioDefault0" value="0">
         <label class="form-check-label" for="flexRadioDefault2">
           공용
         </label>
       </div>
       <!--제품명 입력창-->
       <div class="col-3">
-        <input type="text" class="form-control" id="autoSizingInput" placeholder="제품명을 입력해주세요.">
+        <input type="text" class="form-control" id="serchText" placeholder="제품명을 입력해주세요.">
       </div>
       <!--조회버튼-->
       <div class="col-auto">
@@ -128,7 +128,7 @@
           </tr>
         </thead>
           <!--테이블 바디-->
-        <tbody>
+        <tbody id="tbody">
           <!--크롤링한 데이터-->
         </tbody>
       </table>
@@ -179,6 +179,13 @@
       today.innerHTML = toDay
     }
     
+    //조회 이벤트 호출
+    //DOM Element 선언
+    const serchBtn  = document.getElementById('submitBtn')
+    const category  = document.getElementById('categorySelect')
+    const sex       = document.getElementsByName('sexRadioBtn')
+    const serchText = document.getElementById('serchText')
+
 
 
     // 크롤링한 데이터를 아래와 같은 형태의 객체 배열로 가정합니다.
@@ -214,41 +221,20 @@
         { category: "패션잡화", brand: 'Music&Goods', sex: '0',    product: '빵빵이 키링',           price: '29,000' },
         // ...
     ];
-    
+
     //크롤링 데이터 중 조회 조건에 맞는 데이터만 랜더링
     //조회 결과를 저장할 배열 선언
     let selectedData = []
 
-    //조회 이벤트 호출
-    //DOM Element 선언
-    const serchBtn = document.getElementById('submitBtn')
+    function selectedItems(){
+      const dataTable = document.getElementById('data-table');
+      const tbody = document.getElementsByTagName('tbody')[0]
 
-    //조회 이벤트리스너 선언
-    serchBtn.addEventListener('click', function(e){
-      //submit 버튼의 폼제출 기능을 비활성
-      e.preventDefault();
-      //카테고리값
-      //성별값
-      //제품명
-      
-      serch()
-    })
-    
-    
-    //조회 함수
-    function serch(category, sex, title){
-      for(let i = 0; i < data.length; i ++){
-        console.log("a")
-      }
+      tbody.innerHTML = '';
 
-    }
-
-
-
-    const dataTable = document.getElementById('data-table');
-    //Lambda(Arrow function으로 구현 된 코드)
-    //데이터 배열 받아서 랜더링
-    data.forEach((item) => {
+      //Lambda(Arrow function으로 구현 된 코드)
+      //데이터 배열 받아서 랜더링
+      selectedData.forEach((item) => {
 
         const row = dataTable.insertRow();
         let cellIndex_0 = row.insertCell(0)
@@ -295,7 +281,122 @@
         // }
         // row.insertCell(4).innerHTML = item.product;
         // row.insertCell(5).innerHTML = item.price;
-    });
+      });
+      selectedData = []
+    }
+
+    //조회 함수
+    function serch(check1, check2, check3, category, sex, title){
+      console.log("aaaa")
+
+      console.log("조회함수 check1 :" + check1)
+      console.log("조회함수 check2 :" + check2)
+      console.log("조회함수 check3 :" + check3)
+      console.log("조회함수 category :" + category)
+      console.log("조회함수 sex :" + sex)
+      console.log("조회함수 title :" + title)
+      let checkSum = check1 + check2 + check3
+      console.log("조회함수 checkSum :" + checkSum)
+      // check1, check2, check3 조합으로 경우의 수에 따른 검색실행
+      switch (checkSum){
+        case 0:
+          console.log("switch: "+ checkSum)
+          for(let i = 0; i < data.length; i ++){
+              selectedData.push(data[i])
+          }
+          break;
+        case 1:
+          for(let i = 0; i < data.length; i ++){
+            if(category == 0){
+              selectedData.push(data[i])
+            }else if(data[i].category == category){
+              selectedData.push(data[i])
+            }
+          }
+          break;
+        case 2:
+          for(let i = 0; i < data.length; i ++){
+            if(data[i].sex == sex){
+              selectedData.push(data[i])
+            }
+          }
+          break;
+        case 4:
+          for(let i = 0; i < data.length; i ++){
+            if(data[i].product == title){
+              selectedData.push(data[i])
+            }
+          }
+          break;
+        case 3:
+          for(let i = 0; i < data.length; i ++){
+            if(data[i].category == category && data[i].sex == sex){
+              selectedData.push(data[i])
+            }
+          }
+          break;
+        case 5:
+          for(let i = 0; i < data.length; i ++){
+            if(data[i].category == category && data[i].product == title){
+              selectedData.push(data[i])
+            }
+          }
+          break;
+        case 6:
+          for(let i = 0; i < data.length; i ++){
+            if(data[i].sex == sex && data[i].product == title){
+              selectedData.push(data[i])
+            }
+          }
+          break;
+        default:
+          for(let i = 0; i < data.length; i ++){
+            if(data[i].category == category && data[i].sex == sex && data[i].product == title){
+              selectedData.push(data[i])
+            }
+          }
+        }
+    }
+
+    //조회 이벤트리스너 선언
+    serchBtn.addEventListener('click', function(e){
+      //submit 버튼의 폼제출 기능을 비활성
+      e.preventDefault();
+      //카테고리값
+      // category.value
+      
+      //성별값
+      // 값이 없으면 0
+      let sexValue = 0
+      for (let radio of sex){
+        if(radio.checked){
+          sexValue = radio.value
+        }
+      }
+      //제품명
+      // serchText.value
+      let check1 = 1
+      let check2 = 2
+      let check3 = 4
+      if(category.value == "--카테고리--" || category.value == "전체"){
+        check1 = 0
+      }
+      if(sexValue == 0){
+        check2 = 0
+      }
+      if(serchText.value == ""){
+        check3 = 0
+      }
+
+      serch(check1, check2, check3, category.value, sexValue, serchText.value)
+      selectedItems()
+    })
+    
+    
+
+
+
+
 
   </script>
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/js/bootstrap.bundle.min.js" 
