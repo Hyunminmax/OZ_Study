@@ -17,3 +17,6 @@
     - Python
         - Pythons 이론
     - blog
+3. 보유 Branch
+    - AdminPage_Project
+    - melon_miniProject
