@@ -5,7 +5,6 @@ from selenium.webdriver.common.keys     import Keys
 from bs4                                import BeautifulSoup
 import time
 
-
 # 각종 옵션 설정
 options = Options()
 # 유저 정보 넣기
@@ -13,7 +12,7 @@ options = Options()
 # user = "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/120.0.0.0 Safari/537.36 Edg/120.0.0.0"
 # 모바일 정보 넣기
 user = "Mozilla/5.0 (Linux; Android 13; SM-G981B) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/116.0.0.0 Mobile Safari/537.36 Edg/121.0.0.0"
-options.add_argument(f'User-Agent={user}')
+options.add_argument(f'user-agent={user}')
 
 # 화면 자동 종료 해제 옵션
 options.add_experimental_option('detach', True)
