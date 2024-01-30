@@ -25,7 +25,47 @@ driver = webdriver.Chrome(options=options)
 # 접속하고자하는 사이트 주소 입력
 url = 'https://m2.melon.com/index.htm'
 driver.get(url)
-time.sleep(10)
+time.sleep(1)
+
+if driver.current_url != url:
+    driver.get(url)
+
+driver.find_element(By.LINK_TEXT,'닫기').click()
+time.sleep(1)
+driver.find_element(By.LINK_TEXT,'멜론차트').click()
+
+#2번째 작은 더보기 버튼 누르기
+more_btn = driver.find_elements(By.CSS_SELECTOR, '#moreBtn')[1].click()
+time.sleep(1)
+# 과제 목표
+# 노래순위
+# 노래제목
+# 가수이름
+# 추가정보
+
+html = driver.page_source
+soup = BeautifulSoup(html, 'html.parser')
+
+allItems = soup.select('.service_list.list_music > .list_item')
+
+for i in allItems:
+    rank = i.select_one('.ranking_num').text
+    title = i.select_one('.title.ellipsis').text.strip()
+    name = i.select_one('.name.ellipsis').text.strip()
+    print()
+    print(f'순위 :{rank}')
+    print(f'제목 :{title}')
+    print(f'가수 :{name}')
+    print('===========================================')
+
+    # print(f'출력횟수:{cnt}')
+    if i.select_one('.ranking_num') == 'None':
+        continue
+    else:
+        #순위
+        rank = i.select_one('.ranking_num')
+        # print(rank)
+        
 
 # 크롬드라이버 종료
 driver.quit()

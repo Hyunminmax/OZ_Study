@@ -31,11 +31,12 @@ driver.get(url)
 driver.find_element(By.CSS_SELECTOR, '.btn_search').click()
 time.sleep(0.5)
 
-driver.find_element(By.CSS_SELECTOR, '.input_search.show_placeholder_on_focus').send_keys('슈프림')
+driver.find_element(By.CSS_SELECTOR, '.input_search.show_placeholder_on_focus').send_keys('나이키')
 time.sleep(0.8)
 driver.find_element(By.CSS_SELECTOR, '.input_search.show_placeholder_on_focus').send_keys(Keys.ENTER)
 time.sleep(0.2)
 
+#이미지 스크린샷
 for i in range(3):
     driver.find_element(By.TAG_NAME, 'body').send_keys(Keys.PAGE_DOWN)
     time.sleep(0.4)
@@ -46,6 +47,7 @@ html = driver.page_source
 soup = BeautifulSoup(html, 'html.parser')
 
 items = soup.select('.product_card')
+
 cnt = 1
 for i in items:
     product_name = i.select_one('.translated_name')
@@ -53,7 +55,7 @@ for i in items:
     price_item = i.select_one('.amount')
     wish_Cnt = i.select_one('.wish_figure')
     review_Cnt = i.select_one('.review_figure')
-    if '후드' in product_name.text:
+    if '에어' in product_name.text:
         # 넘버
         print(f'제품번호 : {cnt}')
         # 브랜드
