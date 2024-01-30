@@ -35,3 +35,41 @@ driver.find_element(By.CSS_SELECTOR, '.input_search.show_placeholder_on_focus').
 time.sleep(0.8)
 driver.find_element(By.CSS_SELECTOR, '.input_search.show_placeholder_on_focus').send_keys(Keys.ENTER)
 time.sleep(0.2)
+
+for i in range(3):
+    driver.find_element(By.TAG_NAME, 'body').send_keys(Keys.PAGE_DOWN)
+    time.sleep(0.4)
+    driver.save_screenshot(f'/Study/Images/kream/screenshot{i}.png')#상대경로
+    # driver.save_screenshot(f'H:/내 드라이브/InBox/000000OZ/OZ_Study/Study/Images/kream/screenshot{i}.png')#절대경로
+
+html = driver.page_source
+soup = BeautifulSoup(html, 'html.parser')
+
+items = soup.select('.product_card')
+cnt = 1
+for i in items:
+    product_name = i.select_one('.translated_name')
+    brand_name = i.select_one('.product_info_brand.brand')
+    price_item = i.select_one('.amount')
+    wish_Cnt = i.select_one('.wish_figure')
+    review_Cnt = i.select_one('.review_figure')
+    if '후드' in product_name.text:
+        # 넘버
+        print(f'제품번호 : {cnt}')
+        # 브랜드
+        print(f'브 랜 드 : {brand_name.text.strip()}')
+        # 제품명
+        print(f'제 품 명 : {product_name.text}')
+        # 가격
+        print(f'가    격 : {price_item.text.strip()}')
+        # 관심수
+        print(f'관 심 수 : {wish_Cnt.text.strip()}건')
+        # 리뷰수
+        print(f'리 뷰 수 : {review_Cnt.text.strip()}건')
+        print()
+        cnt += 1
+    else:
+        continue
+
+# 크롬드라이버 종료
+driver.quit()
