@@ -36,6 +36,7 @@ driver.find_element(By.LINK_TEXT,'멜론차트').click()
 
 #2번째 작은 더보기 버튼 누르기
 more_btn = driver.find_elements(By.CSS_SELECTOR, '#moreBtn')[1].click()
+#아래 슬립시간이 짧으면 추가 50곡의 정보를 불러오지 못함. 
 time.sleep(1)
 # 과제 목표
 # 노래순위
@@ -57,15 +58,6 @@ for i in allItems:
     print(f'제목 :{title}')
     print(f'가수 :{name}')
     print('===========================================')
-
-    # print(f'출력횟수:{cnt}')
-    if i.select_one('.ranking_num') == 'None':
-        continue
-    else:
-        #순위
-        rank = i.select_one('.ranking_num')
-        # print(rank)
-        
 
 # 크롬드라이버 종료
 driver.quit()
