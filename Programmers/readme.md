@@ -8,6 +8,7 @@
     - 달리기 경주.py        240130, https://school.programmers.co.kr/learn/courses/30/lessons/178871
     - 최소직사각형.py       240131, https://school.programmers.co.kr/learn/courses/30/lessons/86491
     - 성격유형검사하기.py   240201, https://school.programmers.co.kr/learn/courses/30/lessons/118666
+    - 둘만의암호.py         240202, https://school.programmers.co.kr/learn/courses/30/lessons/155652
 3. Level_2
     - 행렬의 곱셈.py        240129, https://school.programmers.co.kr/learn/courses/30/lessons/12949
       배열곱셈 연산법을 몰라서 힘들었다. 결국 해결.
