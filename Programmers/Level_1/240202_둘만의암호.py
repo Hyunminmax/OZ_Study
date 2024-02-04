@@ -22,7 +22,7 @@ def solution(s, skip, index):
         abcIndex = aToz.index(abc)
         # abcIndex에 index만큼 뒤로 미룸, 미룬 값이 aToz리스트의 길이를 초과한다면 초과한 수는 aToz리스트의 앞에서 마저 미룬다. 
         if abcIndex + index >= aTozlen:
-            newIndex = abcIndex + index % aTozlen
+            newIndex = (abcIndex + index) % aTozlen
         else:
             newIndex = abcIndex + index
         # 그렇게 미뤄진 인덱스에 해당하는 알파벳을 담는다.
