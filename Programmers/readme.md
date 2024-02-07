@@ -12,5 +12,6 @@
     - 이웃한 칸.py          240205, https://school.programmers.co.kr/learn/courses/30/lessons/250125
     - 
 3. Level_2
-    - 행렬의 곱셈.py        240129, https://school.programmers.co.kr/learn/courses/30/lessons/12949
-      배열곱셈 연산법을 몰라서 힘들었다. 결국 해결.
+    - 행렬의 곱셈.py        240129, https://school.programmers.co.kr/learn/courses/30/lessons/12949 배열곱셈 연산법을 몰라서 힘들었다. 결국 해결.
+    - 최댓값과 최솟값.py    240206, https://school.programmers.co.kr/learn/courses/30/lessons/12939
+    - JadenCase 문자열 만들기.py    240207, https://school.programmers.co.kr/learn/courses/30/lessons/12951
