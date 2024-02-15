@@ -10,7 +10,7 @@
     - 성격유형검사하기.py   240201, https://school.programmers.co.kr/learn/courses/30/lessons/118666
     - 둘만의암호.py         240202, https://school.programmers.co.kr/learn/courses/30/lessons/155652
     - 이웃한 칸.py          240205, https://school.programmers.co.kr/learn/courses/30/lessons/250125
-    - 
+    - 하샤드수.py           240215, https://school.programmers.co.kr/learn/courses/30/lessons/12947
 3. Level_2
     - 행렬의 곱셈.py        240129, https://school.programmers.co.kr/learn/courses/30/lessons/12949 배열곱셈 연산법을 몰라서 힘들었다. 결국 해결.
     - 최댓값과 최솟값.py    240206, https://school.programmers.co.kr/learn/courses/30/lessons/12939
