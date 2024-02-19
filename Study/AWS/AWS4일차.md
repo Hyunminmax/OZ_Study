@@ -21,20 +21,40 @@
 
 # 2. EC2  
 - EC2 인스턴스 생성하기 (서울 리전, Ubuntu, t2.micro)  
-![](Study\Images\AWS\EC2\EC2_Create.png)
+![](..\Images\AWS\EC2\EC2_Create.png)
 - ssh로 접속하기  
-![](Study\Images\AWS\EC2\EC2_SSH.png)
+![](..\Images\AWS\EC2\EC2_SSH.png)
 - 3000번 포트를 누구나 접속 가능하도록 보안 규칙 추가하기  
-![](Study\Images\AWS\EC2\EC2_port.png)
+![](..\Images\AWS\EC2\EC2_port.png)
 - EC2 인스턴스 종료하기
-![](Study\Images\AWS\EC2\EC2_Closed.png)
+![](..\Images\AWS\EC2\EC2_Closed.png)
 
 # 3. Elastic IP
 - EC2 인스턴스 생성하기 (서울 리전, Ubuntu, t2.micro)
-![](Study\Images\AWS\EC2\EC2_Create.png)
+![](..\Images\AWS\EC2\EC2_Create.png)
 - Elastic IP 할당 받기
+![](..\Images\AWS\EIP\EIP1.png)
 - 할당 받은 Elastic IP를 EC2 인스턴스에 연결하기
+![](..\Images\AWS\EIP\EIP2.png)
 - 연결한 이후 Elastic IP를 통해 ssh 접속하기
-- EC2 인스턴스에서 Elastic IP 연결 해제하기
+![](..\Images\AWS\EIP\EIP3.png)
+![](..\Images\AWS\EIP\EIP3-1.png)
 - 할당 받은 Elastic IP 릴리즈 하기
+![](..\Images\AWS\EIP\EIP4.png)
 - EC2 인스턴스 종료하기
+![](..\Images\AWS\EC2\EC2_Closed.png)
+
+# 4. EBS
+- EC2 인스턴스 생성하기 (서울 리전, Ubuntu, t2.micro)
+![](..\Images\AWS\EC2\EC2_Create.png)
+- EBS 볼륨 생성 하기 (EC2 인스턴스와 같은 리전+가용영역, 용량은 8GB)
+![](..\Images\AWS\EBS\EBS1.png)
+![](..\Images\AWS\EBS\EBS1-1.png)
+- EC2 인스턴스에 EBS 볼륨 연결하기
+![](..\Images\AWS\EBS\EBS2.png)
+- EC2 인스턴스에서 EBS 볼륨 제거하기
+![](..\Images\AWS\EBS\EBS3.png)
+- EBS 볼륨 삭제하기
+![](..\Images\AWS\EBS\EBS4.png)
+- EC2 인스턴스 종료하기
+![](..\Images\AWS\EC2\EC2_Closed.png)
