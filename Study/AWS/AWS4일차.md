@@ -46,7 +46,7 @@
 
 # 4. EBS
 - EC2 인스턴스 생성하기 (서울 리전, Ubuntu, t2.micro)  
-![](..\Images\AWS\EC2\EC2_Create.png)
+![](../Images/AWS/EC2/EC2_Create.png)
 - EBS 볼륨 생성 하기 (EC2 인스턴스와 같은 리전+가용영역, 용량은 8GB)  
 ![](../Images/AWS/EBS/EBS1.png)
 ![](../Images/AWS/EBS/EBS1-1.png)
