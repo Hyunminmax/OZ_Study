@@ -1,5 +1,5 @@
 # AWS Day5
-![](./Day5_diagram.png)
+![](./Day5_diagram.png)  
 아래 실습을 진행하기 위해 구성한 실습환경의 다이어그램.
 
 
