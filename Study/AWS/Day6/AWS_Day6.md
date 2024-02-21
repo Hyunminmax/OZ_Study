@@ -1,9 +1,10 @@
 # AWS Day6    
-   
-[S3(정적 웹사이트 호스팅)](#s3정적-웹사이트-호스팅)    
-[CloudFront](#cloudfront)    
-[Route 53](#route-53)    
-[IAM](#iam)  
+
+### Index   
+[1. S3(정적 웹사이트 호스팅)](#s3정적-웹사이트-호스팅)    
+[2. CloudFront](#cloudfront)    
+[3. Route 53](#route-53)    
+[4. IAM](#iam)  
   
 ### S3(정적 웹사이트 호스팅)  
 - S3 버킷 생성하기 (서울 리전)  
