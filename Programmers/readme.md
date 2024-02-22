@@ -26,6 +26,8 @@
     https://school.programmers.co.kr/learn/courses/30/lessons/12935
     - 240222, 내적.py
     https://school.programmers.co.kr/learn/courses/30/lessons/70128
+    - 240223, 같은 숫자는 싫어.py
+    https://school.programmers.co.kr/learn/courses/30/lessons/12906
 2. Level_2
     - 240129, 행렬의 곱셈.py  
     https://school.programmers.co.kr/learn/courses/30/lessons/12949  
