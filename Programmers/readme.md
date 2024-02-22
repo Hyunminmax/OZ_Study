@@ -24,6 +24,8 @@
     https://school.programmers.co.kr/learn/courses/30/lessons/12943
     - 240221, 제일 작은 수 제거하기.py
     https://school.programmers.co.kr/learn/courses/30/lessons/12935
+    - 240222, 내적.py
+    https://school.programmers.co.kr/learn/courses/30/lessons/70128
 2. Level_2
     - 240129, 행렬의 곱셈.py  
     https://school.programmers.co.kr/learn/courses/30/lessons/12949  

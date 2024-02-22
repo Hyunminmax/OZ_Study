@@ -10,13 +10,27 @@
 # 3rd try
 def solution(money):
     answer = 0
+    houses = len(money)
     #첫집을 터는가 안터는가로 나뉜다.
+    list1 = [0] * houses
+    list2 = [0] * houses
     #첫집을 털고 시작한다면
+    list1[0] = money[0]
+    list1[1] = max(money[0], money[1])
+    # 첫집을 턴 경우 마지막집은 털지 못한다.
+    for i in range(2, houses-1):
+        list1[i] = max(list1[i-1], list1[i-2] + money[i])
 
-    #targetHouse
-    tH = [] * len(money)
-    #첫집 턴다.
-    tH[0] = money[0]
+    #두번째집부터 털고 시작한다면
+    list2[0] = 0
+    list2[1] = money[1]
+    # 두번째집부터 턴 경우 마지막집은 털 수 있다.
+    for i in range(2, houses):
+        list2[i] = max(list2[i-1], list2[i-2] + money[i])
+
+    #어느집부터 털었는지 확인
+    answer = max(list1[-2], list2[-1])
+    return answer
     
 
 
