@@ -1,20 +1,20 @@
 # OZ코딩스쿨 부트캠프 과정
 - AdminPage_Project 
-    - 상품관리 페이지 제작
+  - 상품관리 페이지 제작
 - AWS
-    - 아마존 AWS교육과정
+  - 아마존 AWS교육과정
 - Crawling
-    - Crawling 이론
+  - Crawling 이론
 - Flask
-    - Flask 교육과정
+  - Flask 교육과정
 - HTML
-    - HTML 이론
+  - HTML 이론
 - Images
-    - 수업중 사용한 공개 Images
+  - 수업중 사용한 공개 Images
 - JS
-    - JS 이론    
+  - JS 이론    
 - Python
-    - Pythons 이론
+  - Pythons 이론
 - SQL
-    - MySQL을 사용한 SQL교육
+  - MySQL을 사용한 SQL교육
 - blog
