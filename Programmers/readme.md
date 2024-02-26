@@ -38,5 +38,5 @@
     https://school.programmers.co.kr/learn/courses/30/lessons/12951
 3. Level_3
 4. Level_4  
-   - 240212, 도둑질.py 진행중  
+   - 240212, 도둑질.py 
    https://school.programmers.co.kr/learn/courses/30/lessons/42897
