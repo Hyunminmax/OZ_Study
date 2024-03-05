@@ -6,6 +6,7 @@
    - Level_2
    - Level_3
    - Level_4
+   - StudyGroup : 파이썬 공부 습관을 위한 스터디 그룹을 개설하여 운영중.
   
 2. Study : OZ코딩스쿨 부트캠프 과정
 - AdminPage_Project 
