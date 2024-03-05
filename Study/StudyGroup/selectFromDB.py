@@ -57,11 +57,11 @@ def connectDB():
 
 
 # DB연결
-# cursor, connectDB = connectDB()
+cursor, connectDB = connectDB()
 
-# # SELECT 조건 설정
-# questions = 5
+# SELECT 조건 설정
+questions = 5
 
-# # SELECT문 호출
-# updateTarget = selectDB(cursor, questions)
-# updateDB(cursor, connectDB, updateTarget)
+# SELECT문 호출
+updateTarget = selectDB(cursor, questions)
+updateDB(cursor, connectDB, updateTarget)
