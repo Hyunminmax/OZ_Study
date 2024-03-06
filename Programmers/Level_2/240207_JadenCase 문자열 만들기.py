@@ -20,4 +20,4 @@ def solution(s):
     print(answer)
     return answer
 
-solution("3people   unFollowed me")
+solution("3people   unFollowed     me")

@@ -10,25 +10,27 @@
 # 숫자로만 이루어진 단어는 없습니다.
 # 공백문자가 연속해서 나올 수 있습니다.
 
+
 def solution(s):
     answer = ''
+    # test1 = ' '
+    # test2 = ''
+    # print('test1:',len(test1))
+    # print('test2:',len(test2))
+
     s = s.lower()
     temp = s.split(' ')
-    print(len(temp))
+    
     for i in range(len(temp)):
-        print('temp[i]:', temp[i])
-        print('len(temp[i]):', len(temp[i]))
+        # print(f'temp[{i}]:', temp[i])
+        # print(f'len(temp[{i}]):', len(temp[i]))
+        if len(temp[i]) != 0:
+            answer += temp[i].capitalize()+' '
 
-        if len(temp[i]) == 0:
-            print('aa')
-            # temp.pop(i)
-        else:
-            temp[i] = temp[i].capitalize()+' '
+    answer = answer[:-1]
+    print('answer:', answer)
 
-
-    print(temp)
-    print(len(temp))
-    print(answer)
+    return answer
 
 
 
