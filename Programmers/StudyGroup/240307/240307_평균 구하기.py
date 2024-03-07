@@ -21,4 +21,4 @@ def solution2(arr):
     print(answer)
     return answer
 
-print(solution3([1,2,3,4]))
+solution3([1,2,3,4])
