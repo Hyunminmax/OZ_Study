@@ -6,7 +6,7 @@ from .models        import Board
 class BoardAdmin(admin.ModelAdmin):
     # pass
     # 아래 값은 튜플이나 리스트로 대입가능
-    list_display = ('title', 'content', 'author', 'date')
+    list_display = ('title', 'content', 'author', 'date', 'updated_at', 'created_at')
     # 단일 튜플은 끝에 ','를 사용해야 함.
     list_filter = ('date',)
     search_fields = ('author', 'content')
