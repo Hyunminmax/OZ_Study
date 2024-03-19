@@ -5,3 +5,5 @@ Study/Flask_Project/__pycache__
 Study/Flask_Project/requirements.txt
 Study/Django-backend/poetry.lock
 Study/Django-backend/pyproject.toml
+.vscode/
+Study/Django-Machine-Learning/.venv
