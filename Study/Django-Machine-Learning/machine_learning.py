@@ -37,4 +37,8 @@ iris = load_iris()
 dt_clf = DecisionTreeClassifier()
 dt_clf.fit(iris.data, iris.target)
 pred = dt_clf.predict(iris.data)
-print(accuracy_score(iris.target, pred))
+accuracy_score(iris.target, pred)
+# print(accuracy_score(iris.target, pred))
+
+# K폴드 코드 링크
+# https://colab.research.google.com/drive/1WhUx9ZMJr3mCOV3uuH01jRdE8MUvGNa8
