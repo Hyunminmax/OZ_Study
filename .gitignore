@@ -7,3 +7,4 @@ Study/Django-backend/poetry.lock
 Study/Django-backend/pyproject.toml
 .vscode/
 Study/Django-Machine-Learning/.venv
+.idea/
