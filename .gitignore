@@ -1,4 +1,5 @@
 ETC/
+*/.venv
 Study/Test/
 Study/Flask_Project/.venv
 Study/Flask_Project/__pycache__
