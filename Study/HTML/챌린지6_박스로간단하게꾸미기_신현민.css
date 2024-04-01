@@ -1,0 +1,15 @@
+body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 0;
+    }
+
+#back{
+    background: linear-gradient(
+        to top right,
+        blue,
+        indigo,
+        red
+      );
+}

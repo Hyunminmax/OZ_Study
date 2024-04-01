@@ -1,0 +1,216 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="x-ua-compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>챌린지7</title>
+</head>
+<body>
+    <div id="challenge7_1"></div>
+    <div id="challenge7_2"></div>
+    <div id="challenge7_3"></div>
+    <div id="challenge7_4" style ="height:300px"></div>
+
+    <script>
+        //1번 학점 확인
+        //제목 표시
+        const challenge7_1 = document.getElementById("challenge7_1")
+        const challenge7_1_h1 = document.createElement("h1")
+        challenge7_1_h1.textContent = "학점 확인 하기"
+        challenge7_1.append(challenge7_1_h1)
+        //재입력 버튼
+        const challenge7_1_retry_btn = document.createElement("button")
+        challenge7_1_retry_btn.textContent = "학점 다시 입력하기"
+        challenge7_1.append(challenge7_1_retry_btn)
+        challenge7_1_retry_btn.onclick = function(){
+            location.reload()
+            }
+        //학점 계산용
+        let challenge7_1_score = ""
+        //학점 표시
+        const challenge7_1_answer = document.createElement("p")
+        //점수 입력받기
+        let challenge7_1_input = prompt("점수를 입력해주세요.")
+        if(challenge7_1_input >= 90){
+            challenge7_1_score = "A"
+        }else if(challenge7_1_input >= 80){
+            challenge7_1_score = "B"
+        }else if(challenge7_1_input >= 70){
+            challenge7_1_score = "C"
+        }else if(challenge7_1_input >= 60){
+            challenge7_1_score = "D"
+        }else if(challenge7_1_input < 60){
+            challenge7_1_score = "F"
+        }
+        if(challenge7_1_input == "" || challenge7_1_input == null){
+            alert("점수를 숫자 정수로 입력해주세요.")
+        }else{
+            challenge7_1_answer.textContent = `당신의 기말고사 점수는 ${challenge7_1_input}점, 학점은 ${challenge7_1_score} 입니다.`
+            challenge7_1.append(challenge7_1_answer)
+        }
+
+ 
+        //2번 별 찍기
+        const challenge7_2 = document.getElementById("challenge7_2")
+        const challenge7_2_h1 = document.createElement("h1")
+        challenge7_2_h1.textContent ="별 트리 찍기"
+        challenge7_2.append(challenge7_2_h1)
+
+        const star_p1 = document.createElement("p")
+        star_p1.textContent = "1번 별"
+        challenge7_2.append(star_p1)
+
+        for(let i = 1; i <=5; i++){
+            const star = document.createElement("p")
+            let x = "#"
+            star.textContent = x.repeat(i)
+            challenge7_2.append(star)
+        }
+
+        const star_p2 = document.createElement("p")
+        star_p2.textContent = "2번 별"
+        challenge7_2.append(star_p2)
+
+        let star2_i = 1
+        for(star2_i; star2_i <=5; star2_i++){
+            const star = document.createElement("p")
+            let x = "$"
+            star.textContent = x.repeat(star2_i)
+            challenge7_2.append(star)
+        }
+        for(star2_i; star2_i >=1; star2_i--){
+            const star = document.createElement("p")
+            let x = "$"
+            star.textContent = x.repeat(star2_i)
+            challenge7_2.append(star)
+        }
+
+        const star_p3 = document.createElement("p")
+        star_p3.textContent = "3번 별"
+        challenge7_2.append(star_p3)
+
+        let star3_i = 1
+        for(star3_i; star3_i <=9; star3_i++){
+            const star = document.createElement("p")
+            let x = "*"
+            let y = "&nbsp"
+            if(star3_i % 2 !=0){
+                star.innerHTML = y.repeat((9-star3_i)/2) + x.repeat(star3_i) + y.repeat((9-star3_i)/2)
+                challenge7_2.append(star)
+            }
+            if(star3_i == 9){
+                for(let i = star3_i; i >=1; i--){
+                    const star = document.createElement("p")
+                    let x = "*"
+                    let y = "&nbsp"
+                    if(i % 2 !=0){
+                        star.innerHTML = y.repeat((9-i)/2) + x.repeat(i) + y.repeat((9-i)/2)
+                        challenge7_2.append(star)
+                    }
+                }
+
+            }
+
+        }
+
+        //3번 4의 배수 5개씩
+        const challenge7_3 = document.getElementById("challenge7_3")
+        const challenge7_3_h1 = document.createElement("h1")
+        challenge7_3_h1.textContent ="4의 배수 5개씩 출력하기"
+        challenge7_3.append(challenge7_3_h1)
+
+        let challenge7_3_i = 100;
+        let challenge7_3_p = document.createElement("p")
+
+        while(challenge7_3_i <= 500){
+            if(challenge7_3_i > 100 && challenge7_3_i % 20 == 0){
+                challenge7_3_p.innerHTML += "<br>" + challenge7_3_i + "&nbsp"
+            }else{
+                challenge7_3_p.innerHTML += challenge7_3_i + "&nbsp"
+            }
+            challenge7_3.append(challenge7_3_p)
+            challenge7_3_i += 4
+            
+        }
+
+
+        //4번 UP & DOWN
+        //제목 표시
+        const challenge7_4 = document.getElementById("challenge7_4")
+        const challenge7_4_h1 = document.createElement("h1")
+        challenge7_4_h1.textContent ="Mystery Number 맞추기(기회는 다섯번!!)"
+        challenge7_4.append(challenge7_4_h1)
+        //부제목 표시
+        const challenge7_4_h3 = document.createElement("h3")
+        challenge7_4_h3.textContent ="1부터 100 사이의 정수를 입력하세요."
+        challenge7_4.append(challenge7_4_h3)
+        //입력창 표시
+        const challenge7_4_input = document.createElement("input")
+        challenge7_4_input.type = "text"
+        challenge7_4_input.style.textAlign = "center"
+        challenge7_4.append(challenge7_4_input)
+        //버튼 표시
+        const challenge7_4_btn = document.createElement("button")
+        challenge7_4_btn.type = "button"
+        challenge7_4_btn.style.textAlign = "center"
+        challenge7_4_btn.textContent = "뚜둥!"
+        challenge7_4.append(challenge7_4_btn)
+        //버튼 표시
+        const challenge7_4_retry_btn = document.createElement("button")
+        challenge7_4_retry_btn.type = "button"
+        challenge7_4_retry_btn.style.textAlign = "center"
+        challenge7_4_retry_btn.textContent = "재도전 ㅠㅜ"
+        // 힌트 주기
+        const challenge7_4_hint = document.createElement("p")
+        // 카운트 주기
+        const challenge7_4_count = document.createElement("p")        
+        //랜덤 숫자 받기
+        let answer = Math.floor(Math.random()*100)+1
+        console.log(answer)
+        let temp = 0
+        //퀴즈 카운트
+        let quizCount =5;
+        //입력 숫자 받고 비교하기
+        challenge7_4_btn.onclick = function(){
+            temp = parseInt(challenge7_4_input.value)
+        //입력 숫자와 비교하기    
+            if(temp > 100 || temp < 1 || typeof temp != "number"){
+                challenge7_4_hint.textContent ="문제를 읽어주세요."
+            }else if(temp == answer){
+                challenge7_4_hint.textContent ="정답!!!! 대단해요!"
+                challenge7_4_count.textContent = 5 - quizCount + "번만에 맞췄어요!!"
+                challenge7_4.append(challenge7_4_count)
+            }else if(temp > answer){
+                challenge7_4_hint.textContent =`${temp}, Down!!`
+                quizCount -= 1
+            }else{
+                challenge7_4_hint.textContent =`${temp}, Up!!`
+                quizCount -= 1
+            }
+            challenge7_4.append(challenge7_4_hint)
+
+            if(quizCount == 0){
+                challenge7_4_count.textContent = "땡!!!! 탈락"
+                challenge7_4.append(challenge7_4_count)
+                challenge7_4_hint.textContent =""
+                challenge7_4.append(challenge7_4_hint)
+                challenge7_4.append(challenge7_4_retry_btn)
+            }else if(quizCount > 0){
+                challenge7_4_count.textContent = quizCount + "번 남았습니다."
+                challenge7_4.append(challenge7_4_count)
+            }else{
+                challenge7_4_count.textContent = "이미 탈락하셨습니다. 재도전을 눌러주세요"
+                challenge7_4.append(challenge7_4_count)
+                challenge7_4_hint.textContent =""
+                challenge7_4.append(challenge7_4_hint)
+            }
+        }
+        challenge7_4_retry_btn.onclick = function(){
+            location.reload()
+        }
+
+        
+    </script>
+</body>
+</html>

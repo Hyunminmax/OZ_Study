@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="x-ua-compatible" content="IE=edge">
+    <title>설문조사 양식</title>
+</head> 
+
+<body>
+    <header>
+    BE_02_신현민
+    <h1>설문조사 양식</h1>
+    <P>모든 항목에 빠짐없이 체크해주십시오.</P>
+    </header>   
+    <hr>
+    <main>
+        <from>
+            <fieldset >
+                <legend>개인정보</legend>
+                <label for="name">이름</label>
+                <input type="text" id="name" name="name" placeholder="본명을 입력하시오">
+                <br>
+                <label for="email">이메일주소</label>
+                <input type="email" id="email" name="=email" placeholder="example@example.com">
+            </fieldset>
+            <fieldset>
+                <legend>설문</legend>
+                <P>연령대가 어떻게 되십니까?</P>
+                <input type="radio" name="age" id="10s">
+                <label for="10s">10대</label>
+                <input type="radio" name="age" id="20s">
+                <label for="20s">20대</label>
+                <input type="radio" name="age" id="30s">
+                <label for="30s">30대</label>
+                <input type="radio" name="age" id="40s">
+                <label for="40s">40대</label>
+                <input type="radio" name="age" id="50s">
+                <label for="50s">50대</label>
+                <input type="radio" name="age" id="00s">
+                <label for="00s">그 외</label>
+
+                <p>학원을 선택할 때 가장 중요하게 생각하는 것은 무엇입니까? 모두 고르시오.</p>
+                <input type="checkbox" name="prefer" id="location">
+                <label for="location">위치</label>                    
+                <input type="checkbox" name="prefer" id="price">
+                <label for="price">가격</label>                  
+                <input type="checkbox" name="prefer" id="teacher">
+                <label for="teacher">강사</label>                  
+                <input type="checkbox" name="prefer" id="environment">
+                <label for="environment">시설</label>                             
+                
+                <p>학원을 방문 할 때 어떤 이동수단을 이용하시나요? 모두 선택해주세요.</p>
+                <input type="checkbox" name="howtomove" id="walk">
+                <label for="walk">걷기</label>                    
+                <input type="checkbox" name="prefer" id="bicycle">
+                <label for="bicycle">자전거</label>                  
+                <input type="checkbox" name="prefer" id="bus">
+                <label for="bus">버스</label>                  
+                <input type="checkbox" name="prefer" id="subway">
+                <label for="subway">지하철</label>            
+                <input type="checkbox" name="prefer" id="car">
+                <label for="car">차</label>                                                  
+            </fieldset>
+            <fieldset>
+                <legend>기타의견</legend>
+                <textarea cols="70" rows="5" name="comment"></textarea>
+            </fieldset>
+            <input type="submit">
+        </from>
+    </main>
+    <hr>
+    <footer>
+        <p>입력하느라 수고하셨습니다.</p>
+    </footer>
+</body>
+</html>

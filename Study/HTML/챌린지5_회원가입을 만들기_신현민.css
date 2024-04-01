@@ -1,0 +1,49 @@
+
+/* 전체 텍스트 스타일, Background image */
+*{
+    font-family: 'Dokdo', system-ui;
+}
+div#back_image{
+    width: 600px;
+    height: 900px;
+    margin: auto;
+
+    background-image: url(./3회차/images/pngwing.com.png);
+    background-size: 600px 900px;
+    background-repeat: no-repeat;
+    background-position: top center;
+    box-sizing: border-box;
+    box-shadow: 30px 30px 100px 20px black;
+}
+h1{
+    text-align: center;
+    padding-top: 80px;
+    font-size: 70px;
+    font-weight: 300;
+    font-style: italic;
+}
+
+div#div_persnal{
+    text-align: center;
+}
+
+input{
+    text-align: left;
+    width: auto;
+    font-size: 30px;
+    margin: 10px;
+}
+
+input.input_persnal_tel{
+    width: 73px;
+    font-size: 30px;
+    margin: 10px;
+}
+input.tel_check{
+    text-align: right;
+}
+*.tel_check{
+    font-size: 20px;
+}
+
+

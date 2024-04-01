@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="ko">
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="x-ua-compatible" content="IE=edge">
+        <title>회원가입 CSS</title>
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Dokdo&display=swap" rel="stylesheet">
+        <link href="챌린지5_회원가입을 만들기_신현민.css" rel="stylesheet">
+    </head>
+    <body>
+        <div id="back_image">
+            <div id="title">
+                <h1>OZ 초격차 회원가입</h1>
+            </div>
+            <div id="div_persnal">
+                <table style="margin: auto;">
+                    <td>
+                        <form>
+                            <input class="input_persnal" type="email" id="email" placeholder="이메일을 입력하세요">
+                            <br>
+                            <input class="input_persnal" type="text" id="name" placeholder="이름을 입력하세요">
+                            <br>
+                            <input class="input_persnal" type="password" id="PW" placeholder="비밀번호 20자리를 입력하세요">
+                            <br>
+                            <input class="input_persnal" type="password" id="pw_check" placeholder="비밀번호를 똑같이 입력하세요">
+                            <br>
+                            <input class="input_persnal_tel" type="tel_1" id="tel_1" value="010">
+                            -
+                            <input class="input_persnal_tel" type="tel_2" id="tel_2" placeholder="1234">
+                            -
+                            <input class="input_persnal_tel" type="tel_3" id="tel_3" placeholder="5678">
+                            <br>
+                            <div style="text-align: right">
+                                000000
+                                <input class="tel_check" type="button" id="tel_check_button" value="인증번호 전송">
+                                <br>
+                                3:00
+                                <input class="tel_check" type="text" id="tel_check" placeholder="인증번호를 입력하세요">
+                            </div>
+                            <br>
+                            <select style="width: 316px; height: 40px; font-size: 20px;" name="location">
+                                <option class="option" selected value="00">-지역을 선택하세요-</option>
+                                <option class="option" value="서울">서울</option>
+                                <option class="option" value="경기">경기</option>
+                                <option class="option" value="강원">강원</option>
+                                <option class="option" value="충청">충청</option>
+                                <option class="option" value="전라">전라</option>
+                                <option class="option" value="경상">경상</option>
+                                <option class="option" value="제주">제주</option>
+                            </select>
+                            <br>
+                            <label for="mail">남</label>
+                            <input type="radio" id="male" name="sex" value="1">
+                            <label for="femail">여</label>
+                            <input type="radio" id="female" name="sex" value="0">
+                            <br>
+                            <input style="width: 316px; text-align: center;" type="submit" value="가입하기">
+                        </form>
+                    </td>
+                </table>
+            </div>
+        </div>
+    </body>
+</html>
