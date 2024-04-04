@@ -32,29 +32,55 @@
 
 # 요구하는 표현식으로 모든 리턴이 성공하는데 어디서 실패하는지 파악 실패.
 # 2nd try
+# def solution(polynomial):
+#     answer = ''
+#     temp = polynomial.split()
+#     temp1 = 0
+#     temp2 = 0
+#     # print(temp)
+
+#     for i in temp:
+#         if i[-1:] == 'x':
+#             if len(i) != 1:
+#                 temp1 += int(i[:-1])
+#             else:
+#                 temp1 += 1
+#         elif i != '+':
+#             temp2 += int(i)
+#     if temp2 == 0:
+#         answer = str(temp1)+'x'
+#     elif temp[0][-1:] == 'x':
+#         answer = str(temp1) + 'x + ' + str(temp2)
+#     else:
+#         answer = str(temp2) + ' + ' + str(temp1) + 'x'
+
+#     return answer
+
+# 준명님 help
 def solution(polynomial):
     answer = ''
     temp = polynomial.split()
     temp1 = 0
     temp2 = 0
-    # print(temp)
-
     for i in temp:
-        if i[-1:] == 'x':
+        if i[-1] == 'x':
             if len(i) != 1:
                 temp1 += int(i[:-1])
             else:
                 temp1 += 1
         elif i != '+':
             temp2 += int(i)
-    if temp2 == 0:
-        answer = str(temp1)+'x'
-    elif temp[0][-1:] == 'x':
-        answer = str(temp1) + 'x + ' + str(temp2)
-    else:
-        answer = str(temp2) + ' + ' + str(temp1) + 'x'
+    if temp1 != 0:
+        if temp1 > 1:
+            answer = str(temp1)
+        answer += 'x'
+    if temp2 > 0:
+        if temp1 > 0:
+            answer += ' + '
+        answer += str(temp2)
 
     return answer
+
 
 
 # 1st try
