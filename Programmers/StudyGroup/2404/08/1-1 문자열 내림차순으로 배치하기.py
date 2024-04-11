@@ -14,7 +14,6 @@ def solution(s):
     orderList.sort(reverse=True)
     for i in orderList:
         answer += chr(i)
-    
     return answer
 
 print(solution('Zbcdefg'))
