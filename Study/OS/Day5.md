@@ -9,7 +9,7 @@
 3. 원형 : 마지막 노드가 첫 번째 노드의 위치를 가리키고 있어 순환 구조를 가진다. 
 
 
-
+```
 #include <stdio.h>
 #include <stdlib.h>
 
@@ -63,3 +63,4 @@ int main() {
     display(head);      // 연결 리스트 출력
     return 0;
 }
+```
